@@ -25,6 +25,8 @@ public class MoviesClient implements IMoviesClient {
                 .queryParam("primary_release_date.lte", to)
                 .toUriString();
 
+        System.out.println(uri);
+
         return restClient.getForEntity(uri, PagedResultDto.class).getBody();
     }
 
